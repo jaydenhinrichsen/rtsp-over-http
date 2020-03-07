@@ -14,6 +14,11 @@ Additionally, you'll need to have FFMPEG install on your machine and it must be 
 For help on installing FFMPEG on windows check out this Stack Exchange post:
 [How do I set up and use ffmpeg in Windows?](https://video.stackexchange.com/questions/20495/how-do-i-set-up-and-use-ffmpeg-in-windows)
 
+Once you've install the requried dependencies you can install the package with the following command"
+``` sh
+npm install rtsp-over-http
+```
+
 ## Usage
 ``` javascript
 const streams = [
