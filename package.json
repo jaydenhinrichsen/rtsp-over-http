@@ -1,0 +1,22 @@
+{
+  "name": "rtsp-over-http",
+  "version": "1.0.0",
+  "description": "",
+  "main": "example.js",
+  "scripts": {
+    "example": "cd example && node server.js"
+  },
+  "keywords": [
+    "rtsp",
+    "rtsp-to-web",
+    "ffmpeg",
+    "ffmpeg socket.io",
+    "socket.io-rtsp",
+    "rtsp-express",
+    "socket-streams",
+    "rtsp-http",
+    "stream rtsp"
+  ],
+  "author": "Jayden Hinrichsen",
+  "license": "MIT"
+}

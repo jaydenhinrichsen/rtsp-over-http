@@ -1,0 +1,56 @@
+<html>
+  <head>
+    <!-- Load Dependencies -->
+    <script src="http://cdn.shinobi.video/js/socket.io.js"></script>
+    <script src="http://cdn.shinobi.video/js/jsmpeg.pipe.js"></script>
+  </head>
+  <body>
+    <!-- Canvas -->
+    <canvas id="canvas" height="160" width="240"></canvas>
+
+    <!-- Basic Controls -->
+    <p>Basic Controls</p>
+    <button id="stop">Stop</button>
+    <button id="resume">Resume</button>
+
+    <!-- Simple Logging -->
+    <pre id="bytes"></pre>
+
+    <!-- Javascript -->
+    <script>
+      document.addEventListener("DOMContentLoaded", e => {
+        var socket = io();
+        var isPlaying = true;
+
+        // Initialize the jsmpeg player
+        var player = new JSMpeg.Player("pipe", {
+          canvas: document.getElementById("canvas")
+        });
+
+        // Establish connection to the stream
+        socket.on("connect", function() {
+          socket.emit("stream", { action: "join", stream: "Test" });
+        });
+
+        // Write to the player when we receive data
+        socket.on("h264", function(data) {
+          if (isPlaying) {
+            player.write(data);
+            bytes.innerHTML =
+              "Received " + new Uint8Array(data).length + " bytes";
+          }
+        });
+
+        // Basic controls
+        document.getElementById("stop").addEventListener("click", e => {
+          isPlaying = false;
+        });
+        document.getElementById("resume").addEventListener("click", e => {
+          isPlaying = true;
+        });
+
+        var bytes = document.getElementById("bytes");
+      });
+    </script>
+  </body>
+</html>
