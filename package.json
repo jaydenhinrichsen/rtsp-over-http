@@ -1,10 +1,14 @@
 {
   "name": "rtsp-over-http",
   "version": "1.0.0",
-  "description": "",
+  "description": "Send RTSP streams using socket.io",
   "main": "example.js",
   "scripts": {
     "example": "cd example && node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jaydenhinrichsen/rtsp-over-http.git"
   },
   "keywords": [
     "rtsp",
@@ -18,5 +22,9 @@
     "stream rtsp"
   ],
   "author": "Jayden Hinrichsen",
-  "license": "MIT"
+  "license": "GNU General Public License v2.0",
+  "bugs": {
+    "url": "https://github.com/jaydenhinrichsen/rtsp-over-http/issues"
+  },
+  "homepage": "https://github.com/jaydenhinrichsen/rtsp-over-http"
 }
